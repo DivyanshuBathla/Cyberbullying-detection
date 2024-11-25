@@ -12,7 +12,7 @@ python3 dataset_download/download_dataset.py
 
 # Run the Base paper Implementation
 
-1. Load the Dataset go to ``` basepaper_implementation/load_data.py ```  and set the ```img_dir``` and ```excel_dir``` after downloading the dataset
+1. Load the Dataset go to ```dataset_downloader/load_data.py ```  and set the ```img_dir``` and ```excel_dir``` after downloading the dataset
 2. run ```basepaper_implementation/train.py``` to train the model
 3. run ```basepaper_implementation/validate.py``` to do the validation 
 
