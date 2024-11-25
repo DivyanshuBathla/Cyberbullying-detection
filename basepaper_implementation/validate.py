@@ -1,4 +1,7 @@
 # Import required libraries (if not already done)
+import sys
+sys.path.append("..")
+
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, f1_score
@@ -7,6 +10,8 @@ import numpy as np
 from MemeDatasetClipVGG import MemeDatasetClipVGG
 from MemeModelCLIPVGG import MemeModelCLIPVGG
 from dataset_downloader.load_data import load_data
+from torch.utils.data import TensorDataset, DataLoader, random_split
+import dataset_downloader.load_data as load_data
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -28,7 +33,7 @@ loss_fn_harmful_score = nn.CrossEntropyLoss().to(device)
 loss_fn_target = nn.CrossEntropyLoss().to(device)
 
 
-def validate_model(model):
+def validate_model(model, val_dataloader, epoch=15):
 
     # Validation
     model.eval()
@@ -198,9 +203,7 @@ def main():
     model = MemeModelCLIPVGG(img_clip_inp_dim, vgg_inp_dim, text_clip_inp_dim, text_roberta_inp_dim)
     # Initialize the Optimizer
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
-    model.load_state_dict(torch.load("PATH_tockpt", weights_only=True))
+    model.load_state_dict(torch.load("model_chekpoints/checkpoint_with_model.pth", weights_only=True))
     model.to(device) 
 
-    losses = []
-    vals = []
-    validate_model(model, train_dataloader, val_dataloader, optimizer, losses, vals, num_epochs=15)
+    validate_model(model, val_dataloader, epoch=15)
