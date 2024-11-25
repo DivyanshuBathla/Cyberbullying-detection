@@ -1,11 +1,15 @@
+import sys
+sys.path.append("..")
+
 from MemeDatasetClipVGG import MemeDatasetClipVGG
 from MemeModelCLIPVGG import MemeModelCLIPVGG
 from dataset_downloader.load_data import load_data
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.utils.data import TensorDataset, DataLoader, random_split
 from tqdm import tqdm
-
+import dataset_downloader.load_data as load_data
 import pretrained_models
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

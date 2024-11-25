@@ -22,4 +22,4 @@ python3 dataset_download/download_dataset.py
 1. run ```python3 Proposed_approach_1/main.py```
 2. run ```python3 Proposed_approach_2/main.py```
 
-To run different model import them frm the `Proposed_approach_1/models/` and use them
+To run different model import them from the `Proposed_approach_1/models/`  or `Proposed_approach_1/models/` and use them accordingly
