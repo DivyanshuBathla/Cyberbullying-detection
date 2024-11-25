@@ -7,7 +7,7 @@ Cyberbullying, poses significant psychological risks, particularly through the u
 TO download the dataset run the python file
 
 ```
-python3 dataset_download/download_dataset.py
+python3 dataset_downloader/download_dataset.py
 ```
 
 # Run the Base paper Implementation
