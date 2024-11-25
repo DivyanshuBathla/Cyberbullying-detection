@@ -31,14 +31,14 @@ def load_data():
     df_cleaned = df[df['Img_Name'] != '2644.jpg']
     df=df_cleaned
 
-    print("Columns: ", df.columns.tolist())
-    print(f"{df.columns.tolist()[2]}: {df[df.columns.tolist()[2]].unique()} ")
-    print(f"{df.columns.tolist()[3]}: {df[df.columns.tolist()[3]].unique()} ")
-    print(f"{df.columns.tolist()[4]}: {df[df.columns.tolist()[4]].unique()} ")
-    print(f"{df.columns.tolist()[5]}: {df[df.columns.tolist()[5]].unique()} ")
-    print(f"{df.columns.tolist()[6]}: {df[df.columns.tolist()[6]].unique()} ")
-    print(f"{df.columns.tolist()[7]}: {df[df.columns.tolist()[7]].unique()} ")
-    print(f"{df.columns.tolist()[8]}: {df[df.columns.tolist()[8]].unique()} ")
-    print(f"{df.columns.tolist()[9]}: {df[df.columns.tolist()[9]].unique()} ")
+    # print("Columns: ", df.columns.tolist())
+    # print(f"{df.columns.tolist()[2]}: {df[df.columns.tolist()[2]].unique()} ")
+    # print(f"{df.columns.tolist()[3]}: {df[df.columns.tolist()[3]].unique()} ")
+    # print(f"{df.columns.tolist()[4]}: {df[df.columns.tolist()[4]].unique()} ")
+    # print(f"{df.columns.tolist()[5]}: {df[df.columns.tolist()[5]].unique()} ")
+    # print(f"{df.columns.tolist()[6]}: {df[df.columns.tolist()[6]].unique()} ")
+    # print(f"{df.columns.tolist()[7]}: {df[df.columns.tolist()[7]].unique()} ")
+    # print(f"{df.columns.tolist()[8]}: {df[df.columns.tolist()[8]].unique()} ")
+    # print(f"{df.columns.tolist()[9]}: {df[df.columns.tolist()[9]].unique()} ")
 
     return df

@@ -20,40 +20,8 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 import pandas as pd
 import pickle
+import dataset_downloader.load_data as load_data
 
-# Load the Excel file
-df = pd.read_excel('/kaggle/input/cyber-excel/Copy of Cyberbully_corrected_emotion_sentiment.xlsx')
-df = df.drop(columns=['Unnamed: 10', 'Unnamed: 11'])
-# Display the first few rows to ensure it is loaded correctly
-# print(df)
-
-df_cleaned = df.dropna()
-df=df_cleaned
-# print(df)
-import os
-import pandas as pd
-
-# Assuming your DataFrame is called df and contains the 'img_id' column
-# Assuming image paths are in a directory (img_dir) and filenames correspond to 'img_id'
-
-img_dir = "/kaggle/input/multibully/bully_data"
-
-# Define a function to check if the image size is zero
-def is_zero_size(img_id, img_dir):
-    img_path = os.path.join(img_dir, img_id)
-    return os.path.exists(img_path) and os.path.getsize(img_path) == 0
-
-# Filter out rows with zero-size images
-df['is_zero_size'] = df['Img_Name'].apply(lambda img_id: is_zero_size(img_id, img_dir))
-df_filtered = df[df['is_zero_size'] == False].drop(columns='is_zero_size')
-
-# Now, df_filtered contains only rows with non-zero-size images
-# print(df_filtered)
-df=df_filtered
-df_cleaned = df[df['Img_Name'] != '2644.jpg']
-df=df_cleaned
-
-df.shape
 
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
@@ -61,7 +29,7 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
-df.head(1)
+df = load_data()
 
 
 
