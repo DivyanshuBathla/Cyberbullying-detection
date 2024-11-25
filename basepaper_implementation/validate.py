@@ -6,7 +6,7 @@ import numpy as np
 
 from MemeDatasetClipVGG import MemeDatasetClipVGG
 from MemeModelCLIPVGG import MemeModelCLIPVGG
-from load_data import load_data
+from dataset_downloader.load_data import load_data
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

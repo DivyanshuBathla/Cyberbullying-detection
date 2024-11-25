@@ -1,6 +1,6 @@
 from MemeDatasetClipVGG import MemeDatasetClipVGG
 from MemeModelCLIPVGG import MemeModelCLIPVGG
-from load_data import load_data
+from dataset_downloader.load_data import load_data
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -154,3 +154,10 @@ def main():
     losses = []
     vals = []
     train_model(model, train_dataloader, val_dataloader, optimizer, losses, vals, num_epochs=15)
+    torch.save({
+            'epoch': 20,
+            'model':model,
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'loss': losses[-1],
+            }, "model_chekpoints/checkpoint_with_model.pth")
