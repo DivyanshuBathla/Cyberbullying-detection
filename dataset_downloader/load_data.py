@@ -8,13 +8,16 @@ from tqdm import tqdm
 def load_data():
     # Load the Excel file
     #df = pd.read_excel('/kaggle/working/bully_data/Cyberbully_corrected_emotion_sentiment_v2.xlsx')
-    df = pd.read_excel("bully_data/data/bully_data/Copy of Cyberbully_corrected_emotion_sentiment.xlsx")
+    excel_dir='bully_data/data/bully_data/Cyberbully_corrected_emotion_sentiment_v2.xlsx'
+    img_dir = "bully_data/data/bully_data/"
+    
+    df = pd.read_excel(excel_dir)
     df = df.drop(columns=['Unnamed: 10', 'Unnamed: 11'])
 
     df_cleaned = df.dropna()
     df=df_cleaned
 
-    img_dir = "bully_data/data/bully_data/"
+    
 
     # Define a function to check if the image size is zero
     def is_zero_size(img_id, img_dir):

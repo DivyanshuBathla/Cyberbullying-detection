@@ -7,12 +7,12 @@ Cyberbullying, poses significant psychological risks, particularly through the u
 TO download the dataset run the python file
 
 ```
-python3 dataset_download/download_dataset.py
+python3 dataset_downloader/download_dataset.py
 ```
 
 # Run the Base paper Implementation
 
-1. Load the Dataset go to ``` basepaper_implementation/load_data.py ```  and set the ```img_dir``` and ```excel_dir``` after downloading the dataset
+1. Load the Dataset go to ```dataset_downloader/load_data.py ```  and set the ```img_dir``` and ```excel_dir``` after downloading the dataset
 2. run ```basepaper_implementation/train.py``` to train the model
 3. run ```basepaper_implementation/validate.py``` to do the validation 
 
@@ -22,4 +22,4 @@ python3 dataset_download/download_dataset.py
 1. run ```python3 Proposed_approach_1/main.py```
 2. run ```python3 Proposed_approach_2/main.py```
 
-To run different model import them frm the `Proposed_approach_1/models/` and use them
+To run different model import them from the `Proposed_approach_1/models/`  or `Proposed_approach_1/models/` and use them accordingly
